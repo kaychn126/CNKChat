@@ -1,0 +1,852 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3848F8344E330ECD1BD63DDF /* libPods-CNKChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9CBA1706A0ED912375E137 /* libPods-CNKChat.a */; };
+		73192A071E00EFC500F16425 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 73192A061E00EFC500F16425 /* UIView+HUD.m */; };
+		734CF6371E0288DD00021A52 /* CNKNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 734CF6361E0288DD00021A52 /* CNKNetworking.m */; };
+		737DC4CD1DF029C20062DF02 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737DC4CC1DF029C20062DF02 /* SystemConfiguration.framework */; };
+		737DC4CF1DF029CB0062DF02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737DC4CE1DF029CB0062DF02 /* QuartzCore.framework */; };
+		737DC4D11DF029D70062DF02 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737DC4D01DF029D70062DF02 /* CoreLocation.framework */; };
+		737DC4D31DF029E30062DF02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737DC4D21DF029E30062DF02 /* CoreGraphics.framework */; };
+		737DC4D51DF029EE0062DF02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737DC4D41DF029EE0062DF02 /* UIKit.framework */; };
+		737DC4F41DF02B640062DF02 /* CNKChatInputMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4DA1DF02B640062DF02 /* CNKChatInputMediaView.m */; };
+		737DC4F51DF02B640062DF02 /* CNKChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4DC1DF02B640062DF02 /* CNKChatInputView.m */; };
+		737DC4F61DF02B640062DF02 /* CNKChatMessageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4DF1DF02B640062DF02 /* CNKChatMessageHelper.m */; };
+		737DC4F71DF02B640062DF02 /* CNKChatMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4E11DF02B640062DF02 /* CNKChatMessageModel.m */; };
+		737DC4F81DF02B640062DF02 /* CNKChatMessageSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4E31DF02B640062DF02 /* CNKChatMessageSender.m */; };
+		737DC4F91DF02B640062DF02 /* CNKChatBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4E61DF02B640062DF02 /* CNKChatBaseCell.m */; };
+		737DC4FA1DF02B640062DF02 /* CNKChatImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4E81DF02B640062DF02 /* CNKChatImageCell.m */; };
+		737DC4FB1DF02B640062DF02 /* CNKChatPlainTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4EA1DF02B640062DF02 /* CNKChatPlainTextCell.m */; };
+		737DC4FC1DF02B640062DF02 /* CNKChatVoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4EC1DF02B640062DF02 /* CNKChatVoiceCell.m */; };
+		737DC4FD1DF02B640062DF02 /* CNKChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4EE1DF02B640062DF02 /* CNKChatView.m */; };
+		737DC4FE1DF02B640062DF02 /* CNKChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4F01DF02B640062DF02 /* CNKChatViewController.m */; };
+		737DC4FF1DF02B640062DF02 /* CNKConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC4F31DF02B640062DF02 /* CNKConversationViewController.m */; };
+		737DC5031DF02BF20062DF02 /* CNKChatSendLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC5021DF02BF20062DF02 /* CNKChatSendLocationViewController.m */; };
+		737DC5061DF038880062DF02 /* CNKChatLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC5051DF038880062DF02 /* CNKChatLocation.m */; };
+		737DC5091DF155820062DF02 /* CNKLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC5081DF155820062DF02 /* CNKLocationManager.m */; };
+		737DC50C1DF18D630062DF02 /* CNKChatLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 737DC50B1DF18D630062DF02 /* CNKChatLocationCell.m */; };
+		D6253F861DDA935C00990371 /* CNKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6253F851DDA935C00990371 /* CNKAppDelegate.m */; };
+		D6253F9F1DDA935C00990371 /* CNKChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6253F9E1DDA935C00990371 /* CNKChatTests.m */; };
+		D6253FB31DDA960000990371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6253FAC1DDA960000990371 /* Assets.xcassets */; };
+		D6253FB51DDA960000990371 /* CNKChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6253FAF1DDA960000990371 /* CNKChat.xcdatamodeld */; };
+		D6253FB71DDA960000990371 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6253FB21DDA960000990371 /* main.m */; };
+		D62CAFF51DDC7DC100E1EEAA /* CNKImgShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CAFF41DDC7DC100E1EEAA /* CNKImgShowView.m */; };
+		D62CAFF81DDC7F7200E1EEAA /* CNKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CAFF71DDC7F7200E1EEAA /* CNKPhotoBrowser.m */; };
+		D62CAFFB1DDC809800E1EEAA /* EBPhotoBroswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CAFFA1DDC809800E1EEAA /* EBPhotoBroswerViewController.m */; };
+		D62CAFFF1DDD795F00E1EEAA /* CNKStrokeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CAFFE1DDD795F00E1EEAA /* CNKStrokeLabel.m */; };
+		D62CB0031DDD854E00E1EEAA /* UIActionSheet+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CB0021DDD854E00E1EEAA /* UIActionSheet+Block.m */; };
+		D62CB0051DDD8A2500E1EEAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D62CB0041DDD8A2500E1EEAA /* AVFoundation.framework */; };
+		D62CB0091DDD8A8000E1EEAA /* CNKAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CB0081DDD8A8000E1EEAA /* CNKAudioManager.m */; };
+		D62CB00C1DDDA22400E1EEAA /* CNKRecordDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CB00B1DDDA22400E1EEAA /* CNKRecordDisplayView.m */; };
+		D63A70571DE1A80E00250EAA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D63A70561DE1A80E00250EAA /* MapKit.framework */; };
+		D68AFB731DDAB35E00E0E78F /* CNKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D68AFB721DDAB35E00E0E78F /* CNKUtils.m */; };
+		D68AFB871DDBD97100E0E78F /* CNKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D68AFB861DDBD97100E0E78F /* CNKCache.m */; };
+		D69DFF701DF27D2600A1B823 /* CNKChatLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69DFF6F1DF27D2600A1B823 /* CNKChatLocationViewController.m */; };
+		D6B23E801DDC317D00E401C3 /* CNKLoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B23E7F1DDC317D00E401C3 /* CNKLoginUser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6253F9B1DDA935C00990371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D6253F761DDA935C00990371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6253F7D1DDA935C00990371;
+			remoteInfo = CNKChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		248B901BC2A6509B7F9814B7 /* Pods-CNKChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNKChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNKChat/Pods-CNKChat.release.xcconfig"; sourceTree = "<group>"; };
+		4D259DB35683D8F57F060820 /* Pods-CNKChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNKChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNKChat/Pods-CNKChat.debug.xcconfig"; sourceTree = "<group>"; };
+		73192A051E00EFC500F16425 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
+		73192A061E00EFC500F16425 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
+		734CF6351E0288DD00021A52 /* CNKNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKNetworking.h; sourceTree = "<group>"; };
+		734CF6361E0288DD00021A52 /* CNKNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKNetworking.m; sourceTree = "<group>"; };
+		737DC4CC1DF029C20062DF02 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		737DC4CE1DF029CB0062DF02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		737DC4D01DF029D70062DF02 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		737DC4D21DF029E30062DF02 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		737DC4D41DF029EE0062DF02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		737DC4D91DF02B640062DF02 /* CNKChatInputMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatInputMediaView.h; sourceTree = "<group>"; };
+		737DC4DA1DF02B640062DF02 /* CNKChatInputMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatInputMediaView.m; sourceTree = "<group>"; };
+		737DC4DB1DF02B640062DF02 /* CNKChatInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatInputView.h; sourceTree = "<group>"; };
+		737DC4DC1DF02B640062DF02 /* CNKChatInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatInputView.m; sourceTree = "<group>"; };
+		737DC4DE1DF02B640062DF02 /* CNKChatMessageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatMessageHelper.h; sourceTree = "<group>"; };
+		737DC4DF1DF02B640062DF02 /* CNKChatMessageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatMessageHelper.m; sourceTree = "<group>"; };
+		737DC4E01DF02B640062DF02 /* CNKChatMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatMessageModel.h; sourceTree = "<group>"; };
+		737DC4E11DF02B640062DF02 /* CNKChatMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatMessageModel.m; sourceTree = "<group>"; };
+		737DC4E21DF02B640062DF02 /* CNKChatMessageSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatMessageSender.h; sourceTree = "<group>"; };
+		737DC4E31DF02B640062DF02 /* CNKChatMessageSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatMessageSender.m; sourceTree = "<group>"; };
+		737DC4E51DF02B640062DF02 /* CNKChatBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatBaseCell.h; sourceTree = "<group>"; };
+		737DC4E61DF02B640062DF02 /* CNKChatBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatBaseCell.m; sourceTree = "<group>"; };
+		737DC4E71DF02B640062DF02 /* CNKChatImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatImageCell.h; sourceTree = "<group>"; };
+		737DC4E81DF02B640062DF02 /* CNKChatImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatImageCell.m; sourceTree = "<group>"; };
+		737DC4E91DF02B640062DF02 /* CNKChatPlainTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatPlainTextCell.h; sourceTree = "<group>"; };
+		737DC4EA1DF02B640062DF02 /* CNKChatPlainTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatPlainTextCell.m; sourceTree = "<group>"; };
+		737DC4EB1DF02B640062DF02 /* CNKChatVoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatVoiceCell.h; sourceTree = "<group>"; };
+		737DC4EC1DF02B640062DF02 /* CNKChatVoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatVoiceCell.m; sourceTree = "<group>"; };
+		737DC4ED1DF02B640062DF02 /* CNKChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatView.h; sourceTree = "<group>"; };
+		737DC4EE1DF02B640062DF02 /* CNKChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatView.m; sourceTree = "<group>"; };
+		737DC4EF1DF02B640062DF02 /* CNKChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatViewController.h; sourceTree = "<group>"; };
+		737DC4F01DF02B640062DF02 /* CNKChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatViewController.m; sourceTree = "<group>"; };
+		737DC4F21DF02B640062DF02 /* CNKConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKConversationViewController.h; sourceTree = "<group>"; };
+		737DC4F31DF02B640062DF02 /* CNKConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKConversationViewController.m; sourceTree = "<group>"; };
+		737DC5011DF02BF20062DF02 /* CNKChatSendLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatSendLocationViewController.h; sourceTree = "<group>"; };
+		737DC5021DF02BF20062DF02 /* CNKChatSendLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatSendLocationViewController.m; sourceTree = "<group>"; };
+		737DC5041DF038880062DF02 /* CNKChatLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatLocation.h; sourceTree = "<group>"; };
+		737DC5051DF038880062DF02 /* CNKChatLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatLocation.m; sourceTree = "<group>"; };
+		737DC5071DF155820062DF02 /* CNKLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKLocationManager.h; sourceTree = "<group>"; };
+		737DC5081DF155820062DF02 /* CNKLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKLocationManager.m; sourceTree = "<group>"; };
+		737DC50A1DF18D630062DF02 /* CNKChatLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatLocationCell.h; sourceTree = "<group>"; };
+		737DC50B1DF18D630062DF02 /* CNKChatLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatLocationCell.m; sourceTree = "<group>"; };
+		AF9CBA1706A0ED912375E137 /* libPods-CNKChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CNKChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6253F7E1DDA935C00990371 /* CNKChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNKChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6253F841DDA935C00990371 /* CNKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CNKAppDelegate.h; sourceTree = "<group>"; };
+		D6253F851DDA935C00990371 /* CNKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNKAppDelegate.m; sourceTree = "<group>"; };
+		D6253F9A1DDA935C00990371 /* CNKChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNKChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6253F9E1DDA935C00990371 /* CNKChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNKChatTests.m; sourceTree = "<group>"; };
+		D6253FA01DDA935C00990371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6253FAC1DDA960000990371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D6253FAE1DDA960000990371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D6253FB01DDA960000990371 /* CNKChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CNKChat.xcdatamodel; sourceTree = "<group>"; };
+		D6253FB11DDA960000990371 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6253FB21DDA960000990371 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D62CAFF31DDC7DC100E1EEAA /* CNKImgShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKImgShowView.h; sourceTree = "<group>"; };
+		D62CAFF41DDC7DC100E1EEAA /* CNKImgShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKImgShowView.m; sourceTree = "<group>"; };
+		D62CAFF61DDC7F7200E1EEAA /* CNKPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKPhotoBrowser.h; sourceTree = "<group>"; };
+		D62CAFF71DDC7F7200E1EEAA /* CNKPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKPhotoBrowser.m; sourceTree = "<group>"; };
+		D62CAFF91DDC809800E1EEAA /* EBPhotoBroswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBPhotoBroswerViewController.h; sourceTree = "<group>"; };
+		D62CAFFA1DDC809800E1EEAA /* EBPhotoBroswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBPhotoBroswerViewController.m; sourceTree = "<group>"; };
+		D62CAFFD1DDD795F00E1EEAA /* CNKStrokeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKStrokeLabel.h; sourceTree = "<group>"; };
+		D62CAFFE1DDD795F00E1EEAA /* CNKStrokeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKStrokeLabel.m; sourceTree = "<group>"; };
+		D62CB0011DDD854E00E1EEAA /* UIActionSheet+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Block.h"; sourceTree = "<group>"; };
+		D62CB0021DDD854E00E1EEAA /* UIActionSheet+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Block.m"; sourceTree = "<group>"; };
+		D62CB0041DDD8A2500E1EEAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D62CB0071DDD8A8000E1EEAA /* CNKAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKAudioManager.h; sourceTree = "<group>"; };
+		D62CB0081DDD8A8000E1EEAA /* CNKAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKAudioManager.m; sourceTree = "<group>"; };
+		D62CB00A1DDDA22400E1EEAA /* CNKRecordDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKRecordDisplayView.h; sourceTree = "<group>"; };
+		D62CB00B1DDDA22400E1EEAA /* CNKRecordDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKRecordDisplayView.m; sourceTree = "<group>"; };
+		D63A70561DE1A80E00250EAA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D63D360D1DE00169004EB126 /* CNKMacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKMacroDefine.h; sourceTree = "<group>"; };
+		D68AFB711DDAB35E00E0E78F /* CNKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKUtils.h; sourceTree = "<group>"; };
+		D68AFB721DDAB35E00E0E78F /* CNKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKUtils.m; sourceTree = "<group>"; };
+		D68AFB741DDABB2400E0E78F /* CNKChat.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChat.pch; sourceTree = "<group>"; };
+		D68AFB851DDBD97100E0E78F /* CNKCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKCache.h; sourceTree = "<group>"; };
+		D68AFB861DDBD97100E0E78F /* CNKCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKCache.m; sourceTree = "<group>"; };
+		D69DFF6E1DF27D2600A1B823 /* CNKChatLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKChatLocationViewController.h; sourceTree = "<group>"; };
+		D69DFF6F1DF27D2600A1B823 /* CNKChatLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKChatLocationViewController.m; sourceTree = "<group>"; };
+		D6B23E7E1DDC317D00E401C3 /* CNKLoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNKLoginUser.h; sourceTree = "<group>"; };
+		D6B23E7F1DDC317D00E401C3 /* CNKLoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNKLoginUser.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D6253F7B1DDA935C00990371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				737DC4D51DF029EE0062DF02 /* UIKit.framework in Frameworks */,
+				737DC4D31DF029E30062DF02 /* CoreGraphics.framework in Frameworks */,
+				737DC4D11DF029D70062DF02 /* CoreLocation.framework in Frameworks */,
+				737DC4CF1DF029CB0062DF02 /* QuartzCore.framework in Frameworks */,
+				737DC4CD1DF029C20062DF02 /* SystemConfiguration.framework in Frameworks */,
+				D62CB0051DDD8A2500E1EEAA /* AVFoundation.framework in Frameworks */,
+				D63A70571DE1A80E00250EAA /* MapKit.framework in Frameworks */,
+				3848F8344E330ECD1BD63DDF /* libPods-CNKChat.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6253F971DDA935C00990371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B062EFE130BA9D6C33E3F65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D259DB35683D8F57F060820 /* Pods-CNKChat.debug.xcconfig */,
+				248B901BC2A6509B7F9814B7 /* Pods-CNKChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		731EE4EC1E022B4500548065 /* CNKNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				734CF6351E0288DD00021A52 /* CNKNetworking.h */,
+				734CF6361E0288DD00021A52 /* CNKNetworking.m */,
+			);
+			path = CNKNetworking;
+			sourceTree = "<group>";
+		};
+		737DC4D61DF02B640062DF02 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				737DC5001DF02BAD0062DF02 /* MapViewController */,
+				737DC4D71DF02B640062DF02 /* ChatViews */,
+				737DC4F11DF02B640062DF02 /* Conversations */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		737DC4D71DF02B640062DF02 /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				737DC4D81DF02B640062DF02 /* CNKChatInputView */,
+				737DC4DD1DF02B640062DF02 /* CNKChatMessage */,
+				737DC4E41DF02B640062DF02 /* CNKChatTableViewCell */,
+				737DC4ED1DF02B640062DF02 /* CNKChatView.h */,
+				737DC4EE1DF02B640062DF02 /* CNKChatView.m */,
+				737DC4EF1DF02B640062DF02 /* CNKChatViewController.h */,
+				737DC4F01DF02B640062DF02 /* CNKChatViewController.m */,
+			);
+			path = ChatViews;
+			sourceTree = "<group>";
+		};
+		737DC4D81DF02B640062DF02 /* CNKChatInputView */ = {
+			isa = PBXGroup;
+			children = (
+				737DC4D91DF02B640062DF02 /* CNKChatInputMediaView.h */,
+				737DC4DA1DF02B640062DF02 /* CNKChatInputMediaView.m */,
+				737DC4DB1DF02B640062DF02 /* CNKChatInputView.h */,
+				737DC4DC1DF02B640062DF02 /* CNKChatInputView.m */,
+			);
+			path = CNKChatInputView;
+			sourceTree = "<group>";
+		};
+		737DC4DD1DF02B640062DF02 /* CNKChatMessage */ = {
+			isa = PBXGroup;
+			children = (
+				737DC4DE1DF02B640062DF02 /* CNKChatMessageHelper.h */,
+				737DC4DF1DF02B640062DF02 /* CNKChatMessageHelper.m */,
+				737DC4E01DF02B640062DF02 /* CNKChatMessageModel.h */,
+				737DC4E11DF02B640062DF02 /* CNKChatMessageModel.m */,
+				737DC4E21DF02B640062DF02 /* CNKChatMessageSender.h */,
+				737DC4E31DF02B640062DF02 /* CNKChatMessageSender.m */,
+			);
+			path = CNKChatMessage;
+			sourceTree = "<group>";
+		};
+		737DC4E41DF02B640062DF02 /* CNKChatTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				737DC4E51DF02B640062DF02 /* CNKChatBaseCell.h */,
+				737DC4E61DF02B640062DF02 /* CNKChatBaseCell.m */,
+				737DC4E91DF02B640062DF02 /* CNKChatPlainTextCell.h */,
+				737DC4EA1DF02B640062DF02 /* CNKChatPlainTextCell.m */,
+				737DC4EB1DF02B640062DF02 /* CNKChatVoiceCell.h */,
+				737DC4EC1DF02B640062DF02 /* CNKChatVoiceCell.m */,
+				737DC4E71DF02B640062DF02 /* CNKChatImageCell.h */,
+				737DC4E81DF02B640062DF02 /* CNKChatImageCell.m */,
+				737DC50A1DF18D630062DF02 /* CNKChatLocationCell.h */,
+				737DC50B1DF18D630062DF02 /* CNKChatLocationCell.m */,
+			);
+			path = CNKChatTableViewCell;
+			sourceTree = "<group>";
+		};
+		737DC4F11DF02B640062DF02 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				737DC4F21DF02B640062DF02 /* CNKConversationViewController.h */,
+				737DC4F31DF02B640062DF02 /* CNKConversationViewController.m */,
+			);
+			path = Conversations;
+			sourceTree = "<group>";
+		};
+		737DC5001DF02BAD0062DF02 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				737DC5011DF02BF20062DF02 /* CNKChatSendLocationViewController.h */,
+				737DC5021DF02BF20062DF02 /* CNKChatSendLocationViewController.m */,
+				737DC5041DF038880062DF02 /* CNKChatLocation.h */,
+				737DC5051DF038880062DF02 /* CNKChatLocation.m */,
+				737DC5071DF155820062DF02 /* CNKLocationManager.h */,
+				737DC5081DF155820062DF02 /* CNKLocationManager.m */,
+				D69DFF6E1DF27D2600A1B823 /* CNKChatLocationViewController.h */,
+				D69DFF6F1DF27D2600A1B823 /* CNKChatLocationViewController.m */,
+			);
+			path = MapViewController;
+			sourceTree = "<group>";
+		};
+		9900FC0A14A1D86EAFDE1D12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				737DC4D41DF029EE0062DF02 /* UIKit.framework */,
+				737DC4D21DF029E30062DF02 /* CoreGraphics.framework */,
+				737DC4D01DF029D70062DF02 /* CoreLocation.framework */,
+				737DC4CE1DF029CB0062DF02 /* QuartzCore.framework */,
+				737DC4CC1DF029C20062DF02 /* SystemConfiguration.framework */,
+				D63A70561DE1A80E00250EAA /* MapKit.framework */,
+				D62CB0041DDD8A2500E1EEAA /* AVFoundation.framework */,
+				AF9CBA1706A0ED912375E137 /* libPods-CNKChat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6253F751DDA935C00990371 = {
+			isa = PBXGroup;
+			children = (
+				D6253F801DDA935C00990371 /* CNKChat */,
+				D6253F9D1DDA935C00990371 /* CNKChatTests */,
+				D6253F7F1DDA935C00990371 /* Products */,
+				6B062EFE130BA9D6C33E3F65 /* Pods */,
+				9900FC0A14A1D86EAFDE1D12 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D6253F7F1DDA935C00990371 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6253F7E1DDA935C00990371 /* CNKChat.app */,
+				D6253F9A1DDA935C00990371 /* CNKChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D6253F801DDA935C00990371 /* CNKChat */ = {
+			isa = PBXGroup;
+			children = (
+				D6253F841DDA935C00990371 /* CNKAppDelegate.h */,
+				D6253F851DDA935C00990371 /* CNKAppDelegate.m */,
+				737DC4D61DF02B640062DF02 /* Modules */,
+				D68AFB701DDAB34200E0E78F /* Utils */,
+				D62CAFF11DDC7D5A00E1EEAA /* Libraries */,
+				D62CB0001DDD852300E1EEAA /* Categories */,
+				D6253FAB1DDA960000990371 /* Resources */,
+			);
+			path = CNKChat;
+			sourceTree = "<group>";
+		};
+		D6253F9D1DDA935C00990371 /* CNKChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6253F9E1DDA935C00990371 /* CNKChatTests.m */,
+				D6253FA01DDA935C00990371 /* Info.plist */,
+			);
+			path = CNKChatTests;
+			sourceTree = "<group>";
+		};
+		D6253FAB1DDA960000990371 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D6253FAC1DDA960000990371 /* Assets.xcassets */,
+				D6253FAD1DDA960000990371 /* LaunchScreen.storyboard */,
+				D6253FAF1DDA960000990371 /* CNKChat.xcdatamodeld */,
+				D6253FB11DDA960000990371 /* Info.plist */,
+				D6253FB21DDA960000990371 /* main.m */,
+				D68AFB741DDABB2400E0E78F /* CNKChat.pch */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D62CAFF11DDC7D5A00E1EEAA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				731EE4EC1E022B4500548065 /* CNKNetworking */,
+				D62CB0061DDD8A6D00E1EEAA /* CNKAudioManager */,
+				D62CAFFC1DDD794300E1EEAA /* CNKStrokeLabel */,
+				D62CAFF21DDC7DC100E1EEAA /* CNKPhotoBrowser */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		D62CAFF21DDC7DC100E1EEAA /* CNKPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				D62CAFF91DDC809800E1EEAA /* EBPhotoBroswerViewController.h */,
+				D62CAFFA1DDC809800E1EEAA /* EBPhotoBroswerViewController.m */,
+				D62CAFF31DDC7DC100E1EEAA /* CNKImgShowView.h */,
+				D62CAFF41DDC7DC100E1EEAA /* CNKImgShowView.m */,
+				D62CAFF61DDC7F7200E1EEAA /* CNKPhotoBrowser.h */,
+				D62CAFF71DDC7F7200E1EEAA /* CNKPhotoBrowser.m */,
+			);
+			path = CNKPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		D62CAFFC1DDD794300E1EEAA /* CNKStrokeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				D62CAFFD1DDD795F00E1EEAA /* CNKStrokeLabel.h */,
+				D62CAFFE1DDD795F00E1EEAA /* CNKStrokeLabel.m */,
+			);
+			path = CNKStrokeLabel;
+			sourceTree = "<group>";
+		};
+		D62CB0001DDD852300E1EEAA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D62CB0011DDD854E00E1EEAA /* UIActionSheet+Block.h */,
+				D62CB0021DDD854E00E1EEAA /* UIActionSheet+Block.m */,
+				73192A051E00EFC500F16425 /* UIView+HUD.h */,
+				73192A061E00EFC500F16425 /* UIView+HUD.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D62CB0061DDD8A6D00E1EEAA /* CNKAudioManager */ = {
+			isa = PBXGroup;
+			children = (
+				D62CB0071DDD8A8000E1EEAA /* CNKAudioManager.h */,
+				D62CB0081DDD8A8000E1EEAA /* CNKAudioManager.m */,
+				D62CB00A1DDDA22400E1EEAA /* CNKRecordDisplayView.h */,
+				D62CB00B1DDDA22400E1EEAA /* CNKRecordDisplayView.m */,
+			);
+			path = CNKAudioManager;
+			sourceTree = "<group>";
+		};
+		D68AFB701DDAB34200E0E78F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D68AFB711DDAB35E00E0E78F /* CNKUtils.h */,
+				D68AFB721DDAB35E00E0E78F /* CNKUtils.m */,
+				D68AFB851DDBD97100E0E78F /* CNKCache.h */,
+				D68AFB861DDBD97100E0E78F /* CNKCache.m */,
+				D6B23E7E1DDC317D00E401C3 /* CNKLoginUser.h */,
+				D6B23E7F1DDC317D00E401C3 /* CNKLoginUser.m */,
+				D63D360D1DE00169004EB126 /* CNKMacroDefine.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D6253F7D1DDA935C00990371 /* CNKChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6253FA31DDA935C00990371 /* Build configuration list for PBXNativeTarget "CNKChat" */;
+			buildPhases = (
+				5A12CFFAF0CE40D126E5DD8C /* [CP] Check Pods Manifest.lock */,
+				D6253F7A1DDA935C00990371 /* Sources */,
+				D6253F7B1DDA935C00990371 /* Frameworks */,
+				D6253F7C1DDA935C00990371 /* Resources */,
+				7C0851E1F7C818FF8D8640BF /* [CP] Embed Pods Frameworks */,
+				C12BDE0C6AE658C48EEEE8A2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CNKChat;
+			productName = CNKChat;
+			productReference = D6253F7E1DDA935C00990371 /* CNKChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D6253F991DDA935C00990371 /* CNKChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6253FA61DDA935C00990371 /* Build configuration list for PBXNativeTarget "CNKChatTests" */;
+			buildPhases = (
+				D6253F961DDA935C00990371 /* Sources */,
+				D6253F971DDA935C00990371 /* Frameworks */,
+				D6253F981DDA935C00990371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6253F9C1DDA935C00990371 /* PBXTargetDependency */,
+			);
+			name = CNKChatTests;
+			productName = CNKChatTests;
+			productReference = D6253F9A1DDA935C00990371 /* CNKChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D6253F761DDA935C00990371 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = chenkai;
+				TargetAttributes = {
+					D6253F7D1DDA935C00990371 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 987934TYXS;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					D6253F991DDA935C00990371 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 987934TYXS;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D6253F7D1DDA935C00990371;
+					};
+				};
+			};
+			buildConfigurationList = D6253F791DDA935C00990371 /* Build configuration list for PBXProject "CNKChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D6253F751DDA935C00990371;
+			productRefGroup = D6253F7F1DDA935C00990371 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6253F7D1DDA935C00990371 /* CNKChat */,
+				D6253F991DDA935C00990371 /* CNKChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6253F7C1DDA935C00990371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6253FB31DDA960000990371 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6253F981DDA935C00990371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A12CFFAF0CE40D126E5DD8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7C0851E1F7C818FF8D8640BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CNKChat/Pods-CNKChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C12BDE0C6AE658C48EEEE8A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CNKChat/Pods-CNKChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D6253F7A1DDA935C00990371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D68AFB731DDAB35E00E0E78F /* CNKUtils.m in Sources */,
+				737DC4FD1DF02B640062DF02 /* CNKChatView.m in Sources */,
+				737DC5031DF02BF20062DF02 /* CNKChatSendLocationViewController.m in Sources */,
+				737DC4FC1DF02B640062DF02 /* CNKChatVoiceCell.m in Sources */,
+				D68AFB871DDBD97100E0E78F /* CNKCache.m in Sources */,
+				737DC4F61DF02B640062DF02 /* CNKChatMessageHelper.m in Sources */,
+				737DC4F71DF02B640062DF02 /* CNKChatMessageModel.m in Sources */,
+				D6253FB51DDA960000990371 /* CNKChat.xcdatamodeld in Sources */,
+				D62CB0031DDD854E00E1EEAA /* UIActionSheet+Block.m in Sources */,
+				737DC4F91DF02B640062DF02 /* CNKChatBaseCell.m in Sources */,
+				D69DFF701DF27D2600A1B823 /* CNKChatLocationViewController.m in Sources */,
+				73192A071E00EFC500F16425 /* UIView+HUD.m in Sources */,
+				D62CB0091DDD8A8000E1EEAA /* CNKAudioManager.m in Sources */,
+				D6253FB71DDA960000990371 /* main.m in Sources */,
+				734CF6371E0288DD00021A52 /* CNKNetworking.m in Sources */,
+				D62CAFFF1DDD795F00E1EEAA /* CNKStrokeLabel.m in Sources */,
+				737DC4F81DF02B640062DF02 /* CNKChatMessageSender.m in Sources */,
+				737DC4FE1DF02B640062DF02 /* CNKChatViewController.m in Sources */,
+				737DC5061DF038880062DF02 /* CNKChatLocation.m in Sources */,
+				D62CAFF81DDC7F7200E1EEAA /* CNKPhotoBrowser.m in Sources */,
+				737DC4FA1DF02B640062DF02 /* CNKChatImageCell.m in Sources */,
+				D62CB00C1DDDA22400E1EEAA /* CNKRecordDisplayView.m in Sources */,
+				737DC50C1DF18D630062DF02 /* CNKChatLocationCell.m in Sources */,
+				737DC4F41DF02B640062DF02 /* CNKChatInputMediaView.m in Sources */,
+				D62CAFF51DDC7DC100E1EEAA /* CNKImgShowView.m in Sources */,
+				D62CAFFB1DDC809800E1EEAA /* EBPhotoBroswerViewController.m in Sources */,
+				D6B23E801DDC317D00E401C3 /* CNKLoginUser.m in Sources */,
+				737DC5091DF155820062DF02 /* CNKLocationManager.m in Sources */,
+				737DC4F51DF02B640062DF02 /* CNKChatInputView.m in Sources */,
+				D6253F861DDA935C00990371 /* CNKAppDelegate.m in Sources */,
+				737DC4FB1DF02B640062DF02 /* CNKChatPlainTextCell.m in Sources */,
+				737DC4FF1DF02B640062DF02 /* CNKConversationViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6253F961DDA935C00990371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6253F9F1DDA935C00990371 /* CNKChatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6253F9C1DDA935C00990371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6253F7D1DDA935C00990371 /* CNKChat */;
+			targetProxy = D6253F9B1DDA935C00990371 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D6253FAD1DDA960000990371 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D6253FAE1DDA960000990371 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D6253FA11DDA935C00990371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D6253FA21DDA935C00990371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D6253FA41DDA935C00990371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D259DB35683D8F57F060820 /* Pods-CNKChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 987934TYXS;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CNKChat/Libraries",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CNKChat/Resources/CNKChat.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/CNKChat/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.easyBenefitEnterprise.breatheMass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D6253FA51DDA935C00990371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 248B901BC2A6509B7F9814B7 /* Pods-CNKChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 987934TYXS;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CNKChat/Libraries",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CNKChat/Resources/CNKChat.pch;
+				INFOPLIST_FILE = "$(SRCROOT)/CNKChat/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.easyBenefitEnterprise.breatheMass;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D6253FA71DDA935C00990371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 987934TYXS;
+				INFOPLIST_FILE = CNKChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cnk.cnkchat.CNKChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNKChat.app/CNKChat";
+			};
+			name = Debug;
+		};
+		D6253FA81DDA935C00990371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 987934TYXS;
+				INFOPLIST_FILE = CNKChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cnk.cnkchat.CNKChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNKChat.app/CNKChat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D6253F791DDA935C00990371 /* Build configuration list for PBXProject "CNKChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6253FA11DDA935C00990371 /* Debug */,
+				D6253FA21DDA935C00990371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6253FA31DDA935C00990371 /* Build configuration list for PBXNativeTarget "CNKChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6253FA41DDA935C00990371 /* Debug */,
+				D6253FA51DDA935C00990371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6253FA61DDA935C00990371 /* Build configuration list for PBXNativeTarget "CNKChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6253FA71DDA935C00990371 /* Debug */,
+				D6253FA81DDA935C00990371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D6253FAF1DDA960000990371 /* CNKChat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D6253FB01DDA960000990371 /* CNKChat.xcdatamodel */,
+			);
+			currentVersion = D6253FB01DDA960000990371 /* CNKChat.xcdatamodel */;
+			path = CNKChat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D6253F761DDA935C00990371 /* Project object */;
+}
