@@ -29,26 +29,11 @@
         make.centerY.mas_equalTo(self.view).mas_offset(100);
         make.size.mas_equalTo(CGSizeMake(100, 50));
     }];
-    
-    UIBarButtonItem *changeItem = [[UIBarButtonItem alloc] initWithTitle:@"Change" style:UIBarButtonItemStylePlain target:self action:@selector(changeAction:)];
-    self.navigationItem.rightBarButtonItem = changeItem;
 }
 
 - (void)chatButtonAction:(UIButton *)button{
     CNKChatViewController *chatvc = [[CNKChatViewController alloc] init];
     [self.navigationController pushViewController:chatvc animated:YES];
-}
-
-- (void)changeAction:(UIBarButtonItem *)buttonItem{
-    if ([self.view cnk_hasHUD]) {
-        if ([self.view cnk_progressHUD].mode == MBProgressHUDModeCustomView) {
-            [self.view cnk_showStatus:@"dkjdfjsdjl"];
-        } else {
-            [self.view cnk_showSuccessWithText:@"成功成"];
-        }
-    } else {
-        [self.view cnk_showSuccessWithText:@"成功成"];
-    }
 }
 
 - (void)didReceiveMemoryWarning {

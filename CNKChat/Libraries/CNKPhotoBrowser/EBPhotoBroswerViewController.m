@@ -99,10 +99,10 @@
 - (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     if (!error) {
-        [SVProgressHUD showSuccessWithStatus:@"成功保存到相册"];
+        [self.view cnk_showSuccessWithText:@"成功保存到相册"];
     }else
     {
-        [SVProgressHUD showErrorWithStatus:@"保存失败"];
+        [self.view cnk_showErrorWithText:@"保存失败"];
     }
 }
 

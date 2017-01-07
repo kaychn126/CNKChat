@@ -44,10 +44,10 @@
 - (void)startLoactionManage{
     if ([CLLocationManager locationServicesEnabled]) {
         if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted) {
-            [SVProgressHUD showInfoWithStatus:@"定位服务当前不可用！"];
+            [[UIView cnk_displayingView] cnk_showInfoWithText:@"定位服务当前不可用！"];
             return;
         }else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
-            [SVProgressHUD showInfoWithStatus:@"定位服务未开启！"];
+            [[UIView cnk_displayingView] cnk_showInfoWithText:@"定位服务未开启！"];
         }else{
             //如果没有授权则请求用户授权
             if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined){

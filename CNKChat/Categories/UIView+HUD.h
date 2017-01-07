@@ -38,4 +38,7 @@
 - (void)cnk_dismissHUD;
 
 - (void)cnk_dismissHUDWithDelay:(NSTimeInterval)delay;
+
+//rootviewcontroller.view
++ (UIView *)cnk_displayingView;
 @end

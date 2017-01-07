@@ -160,4 +160,7 @@
      return 2 + text.length * 0.2;
 }
 
++ (UIView *)cnk_displayingView {
+    return [UIApplication sharedApplication].keyWindow.rootViewController.view;
+}
 @end

@@ -59,7 +59,7 @@ static NSString *kCNKLocationCellId = @"kCNKLocationCellId";
                                                   object:nil];
         self.backgroundColor = kGrayColor(240);
         _msgList = [NSMutableArray array];
-        _mediaItemTypeList = [NSArray arrayWithObjects:[NSNumber numberWithInteger:CNKChatInputMediaItemTypeCamera],[NSNumber numberWithInteger:CNKChatInputMediaItemTypePhotoAlbum],[NSNumber numberWithInteger:CNKChatInputMediaItemTypeShortVideo],[NSNumber numberWithInteger:CNKChatInputMediaItemTypeLocation], nil];
+        _mediaItemTypeList = [NSArray arrayWithObjects:[NSNumber numberWithInteger:CNKChatInputMediaItemTypeCamera],[NSNumber numberWithInteger:CNKChatInputMediaItemTypePhotoAlbum],[NSNumber numberWithInteger:CNKChatInputMediaItemTypeLocation], nil];
         
         [self inputView];
         [self inputMediaView];
