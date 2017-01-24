@@ -23,6 +23,11 @@
 @end
 
 @implementation CNKChatLocationCell
+
++ (CNKMSGContentType)msgContentType {
+    return CNKMSGContentTypeLocation;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _sendMaskImageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"chat_bubbleView_send"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 6, 6, 13)]];
@@ -167,6 +172,10 @@
     CNKChatLocationViewController *locationVc = [[CNKChatLocationViewController alloc] init];
     locationVc.location = _message.location;
     [[self ezb_getNavigationController] pushViewController:locationVc animated:YES];
+    
+    if ([_delegate respondsToSelector:@selector(chatBaseCell:didSelectView:)]) {
+        [_delegate chatBaseCell:self didSelectView:button];
+    }
 }
 
 /*

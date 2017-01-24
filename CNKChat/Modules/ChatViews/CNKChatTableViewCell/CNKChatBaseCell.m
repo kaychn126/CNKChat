@@ -23,6 +23,7 @@
 @synthesize showName = _showName;
 @synthesize sendFaildButton = _sendFaildButton;
 @synthesize sendingIndicatorView = _sendingIndicatorView;
+@synthesize delegate = _delegate;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -255,4 +256,64 @@
     // Configure the view for the selected state
 }
 
++ (NSString *)classNameWithContentType:(CNKMSGContentType)contentType {
+    NSArray *classNameList = [self getAllSubClassNames];
+    if (classNameList) {
+        for (NSString *className in classNameList) {
+            Class clazz = NSClassFromString(className);
+            if ([clazz msgContentType] == contentType) {
+                return className;
+            }
+        }
+    }
+    return nil;
+}
+
++ (NSArray <NSString *> *)getAllSubClassNames {
+    NSString *selfClassKey = [NSStringFromClass([self class]) stringByAppendingString:@"subclasscache"];
+    NSArray *classNameList = (NSArray *)[[CNKCache sharedInstance] cacheObjectForKey:selfClassKey];
+    if (!classNameList) {
+        int numClasses;
+        Class *classes = NULL;
+        numClasses = objc_getClassList(NULL,0);
+        
+        if (numClasses >0 )
+        {
+            classes = (__unsafe_unretained Class *)malloc(sizeof(Class) * numClasses);
+            numClasses = objc_getClassList(classes, numClasses);
+            NSMutableArray *classNameList = [NSMutableArray arrayWithCapacity:numClasses];
+            for (int i = 0; i < numClasses; i++) {
+                if (class_getSuperclass(classes[i]) == [self class]){
+                    if (NSStringFromClass(classes[i])) {
+                        [classNameList addObject:NSStringFromClass(classes[i])];
+                        NSLog(@"%@", NSStringFromClass(classes[i]));
+                    }
+                }
+            }
+            free(classes);
+            [[CNKCache sharedInstance] setCacheObject:classNameList forKey:selfClassKey];
+            return classNameList;
+        }
+    } else {
+        return classNameList;
+    }
+    return nil;
+}
+
++ (CNKMSGContentType)msgContentType {
+    return -1;
+}
+
++ (NSString *)cellIdentifierWithContentType:(CNKMSGContentType)contentType {
+    return [[self classNameWithContentType:contentType] stringByAppendingString:@"CellId"];
+}
+
++ (void)registerTableCellClassWithTableView:(UITableView *)tableView {
+    if (tableView) {
+        NSArray *classNameList = [self getAllSubClassNames];
+        for (NSString *className in classNameList) {
+            [tableView registerClass:NSClassFromString(className) forCellReuseIdentifier:[className stringByAppendingString:@"CellId"]];
+        }
+    }
+}
 @end

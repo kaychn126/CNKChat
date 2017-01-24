@@ -48,6 +48,7 @@ PODS:
   - SDWebImage/Core (3.8.2)
   - TCBlobDownload (2.1.1)
   - TZImagePickerController (1.6.7)
+  - WebViewJavascriptBridge (5.2.0)
   - YTKKeyValueStore (0.1.2):
     - FMDB (~> 2.0)
   - YYCache (1.0.4)
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - SDWebImage
   - TCBlobDownload
   - TZImagePickerController
+  - WebViewJavascriptBridge (~> 5.0)
   - YTKKeyValueStore
   - YYCache
   - YYText
@@ -113,10 +115,11 @@ SPEC CHECKSUMS:
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   TCBlobDownload: 8726f054cc00bb5f66a57bb0c99764842dfa5c9f
   TZImagePickerController: d3b16a1ab3393b251a23fbb22ac2d6bc83a50d5f
+  WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
   YTKKeyValueStore: 4d002941540dd5108fa23009b71e0f2f937f7a0f
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: c3ae3278fd19a8b4afa16b000c394bd5d5217187
+PODFILE CHECKSUM: 0f61299ae8fad3d6d452694b05cc2d6d9fd29c64
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.1.1

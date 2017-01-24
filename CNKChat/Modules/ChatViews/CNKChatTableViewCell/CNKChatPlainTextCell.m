@@ -16,6 +16,10 @@
 
 @implementation CNKChatPlainTextCell
 
++ (CNKMSGContentType)msgContentType {
+    return CNKMSGContentTypePlainText;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self bubbleView];
@@ -102,7 +106,11 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
+    if (selected) {
+        if ([_delegate respondsToSelector:@selector(chatBaseCell:didSelectView:)]) {
+            [_delegate chatBaseCell:self didSelectView:_plainTextLabel];
+        }
+    }
     // Configure the view for the selected state
 }
 

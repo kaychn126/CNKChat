@@ -9,10 +9,7 @@
 #import "CNKChatView.h"
 #import "CNKChatMessageModel.h"
 #import "CNKChatInputView.h"
-#import "CNKChatPlainTextCell.h"
-#import "CNKChatVoiceCell.h"
-#import "CNKChatImageCell.h"
-#import "CNKChatLocationCell.h"
+#import "CNKChatBaseCell.h"
 #import "KeyboardManager.h"
 #import "EBPhotoBroswerViewController.h"
 #import "CNKPhotoBrowser.h"
@@ -22,12 +19,7 @@
 
 static const double kKeyboardAnimationDuration = 0.25;
 
-static NSString *kCNKPlainTextCellId = @"kCNKPlainTextCellId";
-static NSString *kCNKVoiceCellId = @"kCNKVoiceCellId";
-static NSString *kCNKImageCellId = @"kCNKImageCellId";
-static NSString *kCNKLocationCellId = @"kCNKLocationCellId";
-
-@interface CNKChatView()<UITableViewDelegate, UITableViewDataSource, CNKChatInputViewDelegate, CNKChatImageCellDelegate, CNKChatInputMediaViewDelegate>
+@interface CNKChatView()<UITableViewDelegate, UITableViewDataSource, CNKChatInputViewDelegate, CNKChatBaseCellDelegate, CNKChatInputMediaViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) CNKChatInputView *inputView;
 @property (nonatomic, strong) CNKChatInputMediaView *inputMediaView;
@@ -115,10 +107,8 @@ static NSString *kCNKLocationCellId = @"kCNKLocationCellId";
             make.top.mas_equalTo(0);
             make.bottom.mas_equalTo(self.inputView.mas_top);
         }];
-        [_tableView registerClass:CNKChatPlainTextCell.class forCellReuseIdentifier:kCNKPlainTextCellId];
-        [_tableView registerClass:CNKChatVoiceCell.class forCellReuseIdentifier:kCNKVoiceCellId];
-        [_tableView registerClass:CNKChatImageCell.class forCellReuseIdentifier:kCNKImageCellId];
-        [_tableView registerClass:CNKChatLocationCell.class forCellReuseIdentifier:kCNKLocationCellId];
+        
+        [CNKChatBaseCell registerTableCellClassWithTableView:_tableView];
         
         UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 30)];
         footerView.backgroundColor = [UIColor clearColor];
@@ -178,25 +168,10 @@ static NSString *kCNKLocationCellId = @"kCNKLocationCellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CNKChatMessageModel *message = [_msgList objectAtIndex:indexPath.row];
-    if (message.msgContentType == CNKMSGContentTypePlainText) {
-        CNKChatPlainTextCell *cell = [tableView dequeueReusableCellWithIdentifier:kCNKPlainTextCellId];
-        [cell setMessage:message];
-        return cell;
-    } else if (message.msgContentType == CNKMSGContentTypeVoice){
-        CNKChatVoiceCell *cell = [tableView dequeueReusableCellWithIdentifier:kCNKVoiceCellId];
-        [cell setMessage:message];
-        return cell;
-    } else if (message.msgContentType == CNKMSGContentTypeImage){
-        CNKChatImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kCNKImageCellId];
-        cell.delegate = self;
-        [cell setMessage:message];
-        return cell;
-    } else if (message.msgContentType == CNKMSGContentTypeLocation){
-        CNKChatLocationCell *cell = [tableView dequeueReusableCellWithIdentifier:kCNKLocationCellId];
-        [cell setMessage:message];
-        return cell;
-    }
-    return [UITableViewCell new];
+    CNKChatBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:[CNKChatBaseCell cellIdentifierWithContentType:message.msgContentType]];
+    cell.delegate = self;
+    [cell setMessage:message];
+    return cell;
 }
 
 #pragma mark- tableview delegate
@@ -473,21 +448,10 @@ static NSString *kCNKLocationCellId = @"kCNKLocationCellId";
     }
 }
 
-#pragma mark- CNKChatImageCellDelegate
+#pragma mark- CNKChatBaseCellDelegate
 
-- (void)chatImageCell:(CNKChatImageCell *)chatImageCell didSelectImageView:(UIImageView *)imageView{
+- (void)chatBaseCell:(CNKChatBaseCell *)cell didSelectView:(UIView *)view {
     [self tapAction:nil];
-    [CNKChatMessageHelper loadImageMessagesWithConversationId:_conversationId resultBlock:^(NSArray<CNKChatMessageModel *> *messageList) {
-        __block NSInteger index = 0;
-        NSMutableArray *photoList = [NSMutableArray arrayWithCapacity:messageList.count];
-        [messageList enumerateObjectsUsingBlock:^(CNKChatMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([chatImageCell.message.msgId isEqualToString:obj.msgId]) {
-                index = idx;
-            }
-            [photoList addObject:obj.msgContent];
-        }];
-        [CNKPhotoBrowser showImageWithUrlList:photoList selectView:imageView selectIndex:index];
-    }];
 }
 
 #pragma mark- life cycle

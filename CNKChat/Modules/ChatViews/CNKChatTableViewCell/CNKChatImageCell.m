@@ -8,6 +8,7 @@
 
 #import "CNKChatImageCell.h"
 #import "CNKChatMessageHelper.h"
+#import "CNKPhotoBrowser.h"
 
 @interface CNKChatImageCell()
 @property (nonatomic, strong) UIButton *tapButton;
@@ -17,6 +18,11 @@
 @end
 
 @implementation CNKChatImageCell
+
++ (CNKMSGContentType)msgContentType {
+    return CNKMSGContentTypeImage;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _sendMaskImageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"chat_bubbleView_send"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 6, 6, 13)]];
@@ -116,9 +122,20 @@
 #pragma mark- action
 
 - (void)tapButtonAction:(UIButton *)button{
-    if ([_delegate respondsToSelector:@selector(chatImageCell:didSelectImageView:)]) {
-        [_delegate chatImageCell:self didSelectImageView:_contentImageView];
+    [CNKChatMessageHelper loadImageMessagesWithConversationId:_message.conversationId resultBlock:^(NSArray<CNKChatMessageModel *> *messageList) {
+        __block NSInteger index = 0;
+        NSMutableArray *photoList = [NSMutableArray arrayWithCapacity:messageList.count];
+        [messageList enumerateObjectsUsingBlock:^(CNKChatMessageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([self.message.msgId isEqualToString:obj.msgId]) {
+                index = idx;
+            }
+            [photoList addObject:obj.msgContent];
+        }];
+        [CNKPhotoBrowser showImageWithUrlList:photoList selectView:_contentImageView selectIndex:index];
+    }];
+    
+    if ([_delegate respondsToSelector:@selector(chatBaseCell:didSelectView:)]) {
+        [_delegate chatBaseCell:self didSelectView:_contentImageView];
     }
 }
-
 @end

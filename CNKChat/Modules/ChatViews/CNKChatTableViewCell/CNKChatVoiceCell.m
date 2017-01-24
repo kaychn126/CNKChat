@@ -19,6 +19,11 @@
 
 @implementation CNKChatVoiceCell
 
++ (CNKMSGContentType)msgContentType {
+    return CNKMSGContentTypeVoice;
+}
+
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupInterface];
@@ -186,6 +191,10 @@
 
 - (void)playAudioAction:(UIButton *)button{
     
+    if ([_delegate respondsToSelector:@selector(chatBaseCell:didSelectView:)]) {
+        [_delegate chatBaseCell:self didSelectView:button];
+    }
+    
     if (!_message.isAudioPlayed) {
         _message.isAudioPlayed = YES;
         [CNKUtils executeBlockInDBQueue:^{
@@ -238,8 +247,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
     // Configure the view for the selected state
 }
-
 @end

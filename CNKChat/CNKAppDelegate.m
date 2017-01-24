@@ -12,6 +12,7 @@
 #import "MNFrameRate.h"
 #import "CNKChatMessageHelper.h"
 #import "CNKLocationManager.h"
+#import "CNKChatBaseCell.h"
 
 @interface CNKAppDelegate ()
 
@@ -48,6 +49,7 @@
     
     //初始化位置信息(要在主线程初始化)
     [CNKLocationManager sharedInstance];
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{

@@ -8,15 +8,6 @@
 
 #import "CNKChatBaseCell.h"
 
-@class CNKChatImageCell;
-
-@protocol CNKChatImageCellDelegate <NSObject>
-
-- (void)chatImageCell:(CNKChatImageCell *)chatImageCell didSelectImageView:(UIImageView *)imageView;
-
-@end
-
 @interface CNKChatImageCell : CNKChatBaseCell
 @property (nonatomic, strong) UIImageView *contentImageView;
-@property (nonatomic, assign) id<CNKChatImageCellDelegate> delegate;
 @end

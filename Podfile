@@ -29,4 +29,5 @@ target 'CNKChat' do
   pod 'MBProgressHUD'
   pod 'AFNetworking', '~> 3.1.0'
   pod 'Block-KVO', :git => 'https://github.com/Tricertops/Block-KVO.git'
+  pod 'WebViewJavascriptBridge', '~> 5.0'
 end
