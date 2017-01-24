@@ -249,4 +249,8 @@
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
 }
+
++ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message {
+    return kCNKChatVoiceCellBubbleViewHeight;
+}
 @end

@@ -138,4 +138,9 @@
         [_delegate chatBaseCell:self didSelectView:_contentImageView];
     }
 }
+
++ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message {
+    CGSize imageSize = [CNKChatMessageHelper imageSizeWithMsg:message];
+    return imageSize.height;
+}
 @end

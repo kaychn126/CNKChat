@@ -26,7 +26,7 @@
     UIActivityIndicatorView *_sendingIndicatorView;
     __unsafe_unretained id <CNKChatBaseCellDelegate> _delegate;
 }
-@property (nonatomic, strong)CNKChatMessageModel *message;
+@property (nonatomic, strong) CNKChatMessageModel *message;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UIImageView *avatarImageView;
@@ -42,4 +42,6 @@
 + (NSString *)cellIdentifierWithContentType:(CNKMSGContentType)contentType;
 
 + (void)registerTableCellClassWithTableView:(UITableView *)tableView;
+
++ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message;
 @end

@@ -28,6 +28,10 @@
     return CNKMSGContentTypeLocation;
 }
 
++ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message {
+    return kCarrierViewHeight;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _sendMaskImageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"chat_bubbleView_send"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 6, 6, 13)]];
@@ -124,10 +128,8 @@
     [super setMessage:message];
     
     _message = message;
-    UIImage *image = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:message.msgContentMd5Key];
-    if (!image) {
-        image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:message.msgContentMd5Key];
-    }
+    UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:message.msgContentMd5Key];
+    
     [_locationImageView setImage:image];
     _addressLabel.text = message.location.placeName;
     _detailAddressLabel.text = message.location.address;

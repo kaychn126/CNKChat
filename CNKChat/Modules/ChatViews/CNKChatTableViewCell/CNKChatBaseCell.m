@@ -316,4 +316,9 @@
         }
     }
 }
+
++ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message {
+    //need subclass to override
+    return 0;
+}
 @end

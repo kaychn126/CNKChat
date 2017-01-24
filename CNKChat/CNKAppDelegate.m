@@ -37,7 +37,7 @@
         [[LKDBHelper getUsingLKDBHelper] setDBPath:[[FCFileManager pathForCachesDirectory] stringByAppendingPathComponent:@"database/cnkchat.db"]];
         
         [CNKLoginUser sharedInstance].userName = @"ck";
-        [CNKLoginUser sharedInstance].userId = @"ckidckid";
+        [CNKLoginUser sharedInstance].userId = @"ckidckid1";
         
         //初始化缓存服务
         [CNKCache sharedInstance];

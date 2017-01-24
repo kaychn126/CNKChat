@@ -114,4 +114,10 @@
     // Configure the view for the selected state
 }
 
++ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message {
+    CGSize plainTextSize = [CNKChatMessageHelper plainTextSizeWithMsg:message];
+    double textHeight = plainTextSize.height<kCNKChatPlainTextCellMinTextViewHeight?kCNKChatPlainTextCellMinTextViewHeight:plainTextSize.height;
+    return (kCNKChatPlainTextCellMinBubbleViewHeight -kCNKChatPlainTextCellMinTextViewHeight) + textHeight;
+}
+
 @end

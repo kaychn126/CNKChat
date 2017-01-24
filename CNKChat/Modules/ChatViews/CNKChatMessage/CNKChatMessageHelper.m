@@ -203,39 +203,9 @@
         return [cellHeightNumber doubleValue];
     }
     
-    double cellHeight = 0;
-    
-    if (message.msgContentType == CNKMSGContentTypePlainText) {
-        CGSize plainTextSize = [CNKChatMessageHelper plainTextSizeWithMsg:message];
-        double textHeight = plainTextSize.height<kCNKChatPlainTextCellMinTextViewHeight?kCNKChatPlainTextCellMinTextViewHeight:plainTextSize.height;
-        if (message.showTime) {
-            cellHeight = kCNKChatCellShowTimeTopInset + (kCNKChatPlainTextCellMinBubbleViewHeight -kCNKChatPlainTextCellMinTextViewHeight) + textHeight;
-        } else {
-            cellHeight = kCNKChatCellHideTimeTopInset + (kCNKChatPlainTextCellMinBubbleViewHeight -kCNKChatPlainTextCellMinTextViewHeight) + textHeight;
-        }
-        
-    } else if (message.msgContentType == CNKMSGContentTypeVoice){
-        
-        if (message.showTime) {
-            cellHeight = kCNKChatCellShowTimeTopInset + kCNKChatVoiceCellBubbleViewHeight;
-        } else {
-            cellHeight = kCNKChatCellHideTimeTopInset + kCNKChatVoiceCellBubbleViewHeight;
-        }
-        
-    } else if (message.msgContentType == CNKMSGContentTypeImage){
-        CGSize imageSize = [CNKChatMessageHelper imageSizeWithMsg:message];
-        if (message.showTime) {
-            cellHeight = kCNKChatCellShowTimeTopInset + imageSize.height;
-        } else {
-            cellHeight = kCNKChatCellHideTimeTopInset + imageSize.height;
-        }
-    } else if (message.msgContentType == CNKMSGContentTypeLocation) {
-        if (message.showTime) {
-            cellHeight = kCNKChatCellShowTimeTopInset + kCarrierViewHeight;
-        } else {
-            cellHeight = kCNKChatCellHideTimeTopInset + kCarrierViewHeight;
-        }
-    }
+    Class clazz = NSClassFromString([CNKChatBaseCell classNameWithContentType:message.msgContentType]);
+    double cellHeight = [clazz cellContentHeightWithMsg:message];
+    cellHeight = message.showTime?cellHeight+kCNKChatCellShowTimeTopInset:cellHeight+kCNKChatCellHideTimeTopInset;
     
     if (cellHeight > 0) {
         [[CNKCache sharedInstance] setCacheObject:[NSNumber numberWithDouble:cellHeight] forKey:message.msgId];
