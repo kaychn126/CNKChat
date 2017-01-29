@@ -10,6 +10,9 @@
 #import "CNKChatMessageHelper.h"
 #import "CNKChatLocationViewController.h"
 
+#define kCarrierViewWidth kScreenWidth * 0.55
+#define kCarrierViewHeight 0.63*kCarrierViewWidth
+
 @interface CNKChatLocationCell()
 @property (nonatomic, strong) UIButton *tapButton;
 @property (nonatomic, strong) UIImageView *sendMaskImageView;

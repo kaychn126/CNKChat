@@ -23,6 +23,11 @@
     return CNKMSGContentTypeImage;
 }
 
++ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message {
+    CGSize imageSize = [CNKChatMessageHelper imageSizeWithMsg:message];
+    return imageSize.height;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _sendMaskImageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"chat_bubbleView_send"] resizableImageWithCapInsets:UIEdgeInsetsMake(27, 6, 6, 13)]];
@@ -139,8 +144,4 @@
     }
 }
 
-+ (double)cellContentHeightWithMsg:(CNKChatMessageModel *)message {
-    CGSize imageSize = [CNKChatMessageHelper imageSizeWithMsg:message];
-    return imageSize.height;
-}
 @end

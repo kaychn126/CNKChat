@@ -8,9 +8,6 @@
 
 #import "CNKChatBaseCell.h"
 
-#define kCarrierViewWidth kScreenWidth * 0.55
-#define kCarrierViewHeight 0.63*kCarrierViewWidth
-
 @interface CNKChatLocationCell : CNKChatBaseCell
 
 @end
