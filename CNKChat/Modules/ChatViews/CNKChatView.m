@@ -179,22 +179,24 @@ static const double kKeyboardAnimationDuration = 0.25;
 #pragma mark- query messages
 
 - (void)queryFirstPageMessages{
-    WS(weakSelf);
+    Weakfy(weakSelf);
     [CNKChatMessageHelper loadFirstPageWithConversationId:_conversationId resultBlock:^(NSArray<CNKChatMessageModel *> *messageList, BOOL hasMoreData) {
-        weakSelf.hasMoreData = hasMoreData;
-        [weakSelf insertFirstPageMessageList:messageList];
+        Strongfy(strongSelf, weakSelf);
+        strongSelf.hasMoreData = hasMoreData;
+        [strongSelf insertFirstPageMessageList:messageList];
     }];
 }
 
 - (void)queryNextPageMessagesCompletionBlock:(void(^)(BOOL hasMoreData))completionBlock{
-    WS(weakSelf);
+    Weakfy(weakSelf);
     [CNKChatMessageHelper loadNextPageWithLastMessage:[_msgList firstObject] resultBlock:^(NSArray<CNKChatMessageModel *> *messageList, BOOL hasMoreData) {
         [CNKUtils executeBlockInMainQueue:^{
-            weakSelf.hasMoreData = hasMoreData;
+            Strongfy(strongSelf, weakSelf);
+            strongSelf.hasMoreData = hasMoreData;
             if (completionBlock) {
                 completionBlock(hasMoreData);
             }
-            [weakSelf insertOldMessageList:messageList];
+            [strongSelf insertOldMessageList:messageList];
         } delay:0.4];
     }];
 }
@@ -417,12 +419,13 @@ static const double kKeyboardAnimationDuration = 0.25;
         isLoading = YES;
         [self loadingIndicatorView].hidden = NO;
         [[self loadingIndicatorView] startAnimating];
-        WS(weakSelf);
+        Weakfy(weakSelf);
         [self queryNextPageMessagesCompletionBlock:^(BOOL hasMoreData) {
+            Strongfy(strongSelf, weakSelf);
             isLoading = NO;
-            weakSelf.hasMoreData = hasMoreData;
-            [weakSelf loadingIndicatorView].hidden = YES;
-            [[weakSelf loadingIndicatorView] stopAnimating];
+            strongSelf.hasMoreData = hasMoreData;
+            [strongSelf loadingIndicatorView].hidden = YES;
+            [[strongSelf loadingIndicatorView] stopAnimating];
         }];
     }
 }

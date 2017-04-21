@@ -35,7 +35,7 @@
         double itemX = (15 + itemWidth * (idx%4)) + kScreenWidth * (idx/8);
         double itemY = 15 + itemWidth * (idx/4);
         NSNumber *itemTypeNumber = (NSNumber *)obj;
-        WS(weakSelf);
+        Weakfy(weakSelf);
         CNKChatInputMediaItemView *itemView = [[CNKChatInputMediaItemView alloc] initWithItemType:itemTypeNumber.integerValue actionBlock:^(CNKChatInputMediaItemType itemType) {
             [weakSelf actionWithItemType:itemType];
         }];
@@ -58,10 +58,11 @@
         [[self ezb_getNavigationController] presentViewController:picker animated:YES completion:nil];
     } else if (itemType == CNKChatInputMediaItemTypePhotoAlbum) {
         TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:nil];
-        WS(weakSelf);
+        Weakfy(weakSelf);
         [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
-            if ([weakSelf.delegate respondsToSelector:@selector(inputMediaView:sendImageAction:)]) {
-                [weakSelf.delegate inputMediaView:weakSelf sendImageAction:photos];
+            Strongfy(strongSelf, weakSelf);
+            if ([strongSelf.delegate respondsToSelector:@selector(inputMediaView:sendImageAction:)]) {
+                [strongSelf.delegate inputMediaView:strongSelf sendImageAction:photos];
             }
         }];
         [[self ezb_getNavigationController] presentViewController:imagePickerVc animated:YES completion:nil];
@@ -79,10 +80,11 @@
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sendLocationVc];
         nav.view.backgroundColor = [UIColor whiteColor];
         sendLocationVc.hidesBottomBarWhenPushed = YES;
-        WS(weakSelf);
+        Weakfy(weakSelf);
         sendLocationVc.sendActionBlock = ^(CNKChatLocation *sendLocation){
-            if ([weakSelf.delegate respondsToSelector:@selector(inputMediaView:sendLocationAction:)]) {
-                [weakSelf.delegate inputMediaView:weakSelf sendLocationAction:sendLocation];
+            Strongfy(strongSelf, weakSelf);
+            if ([strongSelf.delegate respondsToSelector:@selector(inputMediaView:sendLocationAction:)]) {
+                [strongSelf.delegate inputMediaView:weakSelf sendLocationAction:sendLocation];
             }
         };
         [[self ezb_getClosestViewController] presentViewController:nav animated:YES completion:nil];

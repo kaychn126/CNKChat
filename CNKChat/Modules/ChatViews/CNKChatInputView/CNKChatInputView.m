@@ -214,11 +214,12 @@
 }
 
 - (void)buttonTouchUpInsideAction:(UIButton *)button{
-    WS(weakSelf);
+    Weakfy(weakSelf);
     _recordButton.backgroundColor = kGrayColor(240);
     [[CNKAudioManager sharedInstance] stopRecordWithCompletionBlock:^(NSURL *audioContentOfUrl) {
-        if ([weakSelf.delegate respondsToSelector:@selector(inputView:sendAudioAction:)]) {
-            [weakSelf.delegate inputView:self sendAudioAction:audioContentOfUrl.absoluteString];
+        Strongfy(strongSelf, weakSelf);
+        if ([strongSelf.delegate respondsToSelector:@selector(inputView:sendAudioAction:)]) {
+            [strongSelf.delegate inputView:self sendAudioAction:audioContentOfUrl.absoluteString];
         }
     }];
 }

@@ -17,7 +17,8 @@
 #define kRGBColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #define kRGBAColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define kGrayColor(v) kRGBColor(v,v,v)
-#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+#define Weakfy(weakSelf)  __weak __typeof(&*self)weakSelf = self
+#define Strongfy(strongSelf,weakSelf)  __strong __typeof(&*self) strongSelf = weakSelf
 #define kQueryDBQueue [CNKCache sharedInstance].ioQueue
 
 

@@ -218,7 +218,7 @@ static NSString *const cellIdentifier = @"CNKSendLocationViewControllerCellIdent
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
     CLLocation *location = [[CLLocation alloc] initWithLatitude:mapView.centerCoordinate.latitude longitude:mapView.centerCoordinate.longitude];
-    WS(weakSelf);
+    Weakfy(weakSelf);
     [self queryPlaceListWithLocation:location completionBlock:^(NSArray *placemarkList) {
         [weakSelf.placemarkList removeAllObjects];
         if (placemarkList.count > 0) {

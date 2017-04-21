@@ -225,7 +225,7 @@
     
     if ([CNKAudioManager getAudioLengthWithAudioCacheKey:_message.msgContentMd5Key] > 0) {
         [_playingAudioImageView startAnimating];
-        WS(weakSelf);
+        Weakfy(weakSelf);
         [[CNKAudioManager sharedInstance] playWithMessage:_message completionBlock:^{
             [weakSelf.playingAudioImageView stopAnimating];
         }];

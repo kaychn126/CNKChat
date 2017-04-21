@@ -40,7 +40,7 @@
 
 // 初始化视图
 - (void)creatImgShow{
-  WS(weakSelf);
+    Weakfy(weakSelf);
     _imgShowView = [[CNKImgShowView alloc]
                                   initWithFrame:self.view.frame
                                   withSourceData:_data
@@ -48,8 +48,9 @@
     [_imgShowView requireDoubleGestureRecognizer:[[self.view gestureRecognizers] lastObject]];
     [self.view addSubview:_imgShowView];
     _imgShowView.pageIndexChangeBlock = ^(NSInteger index){
-        if(weakSelf.pageLabel){
-            weakSelf.pageLabel.text = [NSString stringWithFormat:@"%ld/%ld",(unsigned long)index+1,(unsigned long)weakSelf.data.count];
+        Strongfy(strongSelf, weakSelf);
+        if(strongSelf.pageLabel){
+            strongSelf.pageLabel.text = [NSString stringWithFormat:@"%ld/%ld",(unsigned long)index+1,(unsigned long)strongSelf.data.count];
         }
     };
     
